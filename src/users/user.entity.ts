@@ -1,5 +1,6 @@
 import {Entity, Column, ObjectIdColumn} from 'typeorm';
 import { ObjectId } from 'mongodb';
+import { Role } from 'src/enum/role.enum';
 
 @Entity('users') // ← Chỉ định tên collection chính xác
 export class User {
@@ -11,4 +12,7 @@ export class User {
 
     @Column()
     password: string;
+
+    @Column()
+    role: Role; // ← Thêm field role
 }
